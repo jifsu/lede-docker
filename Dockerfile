@@ -27,6 +27,4 @@ RUN /etc/init.d/sysntpd disable
 
 COPY /files/network /etc/config/network
 
-SHELL ["/bin/sh", "-c", "/usr/libexec/login.sh"]
-
 CMD ["/sbin/init"]
