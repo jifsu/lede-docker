@@ -1,5 +1,0 @@
-DISTRO="lede"
-ARCH="x86-64"
-VERSION="17.01.4"
-REPO="$DISTRO-$VERSION-$ARCH"
-HUBUSER="oskarirauta"
