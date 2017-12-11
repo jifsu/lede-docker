@@ -10,5 +10,3 @@ RUN mkdir -pv /var/run
 RUN mkdir -pv /var/lock
 RUN opkg update
 RUN opkg install nano
-
-ENTRYPOINT /sbin/init
