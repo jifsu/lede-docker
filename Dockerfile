@@ -12,4 +12,6 @@ RUN sed --in-place '/ip -4 address flush dev $pi_ifname/d' /lib/preinit/10_indic
 RUN opkg update
 RUN opkg install nano
 
+SHELL ["/usr/libexec/login.sh"]
+
 CMD ["/sbin/init"]
