@@ -25,6 +25,8 @@ RUN /etc/init.d/sysctl disable
 RUN /etc/init.d/sysfixtime disable
 RUN /etc/init.d/sysntpd disable
 
+COPY /files/network /etc/config/network
+
 SHELL ["/usr/libexec/login.sh"]
 
 CMD ["/sbin/init"]
