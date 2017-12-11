@@ -6,4 +6,9 @@ EXPOSE 22
 
 ADD files/lede-17.01.4-x86-64-generic-rootfs.tar.gz /
 
+RUN mkdir -pv /var/run
+RUN mkdir -pv /var/lock
+RUN opkg update
+RUN opkg install nano
+
 ENTRYPOINT /sbin/init
