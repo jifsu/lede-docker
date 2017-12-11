@@ -21,6 +21,9 @@ RUN /etc/init.d/gpio_switch disable
 RUN /etc/init.d/led disable
 RUN /etc/init.d/network disable
 RUN /etc/init.d/odhcpd disable
+RUN /etc/init.d/sysctl disable
+RUN /etc/init.d/sysfixtime disable
+RUN /etc/init.d/sysntpd disable
 
 SHELL ["/usr/libexec/login.sh"]
 
