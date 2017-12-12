@@ -26,11 +26,10 @@ RUN /etc/init.d/sysctl disable
 RUN /etc/init.d/sysfixtime disable
 RUN /etc/init.d/sysntpd disable
 
-COPY /files/network /etc/config/network
+RUN rm -f /etc/config/network /etc/inittab /bin/sh
 
-COPY files/sh /tmp/sh
-RUN chmod a+x /tmp/sh
-RUN rm /etc/inittab /bin/sh; cp /tmp/sh /bin/sh
+COPY files/network /etc/config/network
+COPY files/sh /bin/sh
 COPY files/inittab /etc/inittab
 
 CMD ["/sbin/init"]
