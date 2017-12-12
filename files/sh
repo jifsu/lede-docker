@@ -1,0 +1,7 @@
+#!/bin/busybox sh
+
+if [ "$#" -eq 0 ]; then
+	/bin/busybox sh -c /usr/libexec/login.sh
+else
+	/bin/busybox sh "$@"
+fi
