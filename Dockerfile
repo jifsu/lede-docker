@@ -28,4 +28,8 @@ RUN /etc/init.d/sysntpd disable
 
 COPY /files/network /etc/config/network
 
+RUN rm /etc/inittab /bin/sh
+COPY files/sh /bin/sh
+COPY files/inittab /etc/inittab
+
 CMD ["/sbin/init"]
