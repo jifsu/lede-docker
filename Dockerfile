@@ -29,6 +29,7 @@ RUN /etc/init.d/sysntpd disable
 COPY /files/network /etc/config/network
 
 COPY files/sh /tmp/sh
+RUN chmod a+x /tmp/sh
 RUN rm /etc/inittab /bin/sh; cp /tmp/sh /bin/sh
 COPY files/inittab /etc/inittab
 
