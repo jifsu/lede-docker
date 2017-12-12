@@ -8,5 +8,5 @@
  - most services disabled by default, these are enabled: cron, log, uhttpd, dropbear, rpcd
  - nano preinstalled
  
- # Shell
- If you enter via shell, you should execute '/usr/libexec/login.sh' to get into designated environment.
+ # Minimal LEDE Container
+ This image provides support for testing in OpenWRT environment before applying changes to production level routers.
