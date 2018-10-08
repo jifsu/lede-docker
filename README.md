@@ -1,5 +1,5 @@
 [appurl]: https://lede-project.org
-[![lede-project](https://openwrt.org/.styles/img/openwrt-logo.png)][appurl]
+[![lede-project](https://openwrt.org/lib/tpl/openwrt/images/logo.png)][appurl]
 
 # Minimal LEDE Docker container
 This image provides support for testing in OpenWRT environment before applying changes to production level routers.
