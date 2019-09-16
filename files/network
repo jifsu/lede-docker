@@ -1,12 +1,60 @@
 config interface 'loopback'
-  option ifname 'lo'
-	option proto 'static'
-	option ipaddr '127.0.0.1'
-	option netmask '255.0.0.0'
+        option ifname 'lo'
+        option proto 'static'
+        option ipaddr '127.0.0.1'
+        option netmask '255.0.0.0'
 
 config globals 'globals'
-	option ula_prefix 'fdbb:8e3d:c026::/48'
+        option ula_prefix 'fd69:9c9c:e39e::/48'
 
 config interface 'lan'
-	option ifname 'eth0'
-	option proto 'none'
+        option type 'bridge'
+        option ifname 'eth0.1'
+        option proto 'static'
+        option netmask '255.255.255.0'
+        option ip6assign '60'
+        option ipaddr '10.2.1.1'
+        option gateway '169.254.145.1'
+
+config device 'lan_dev'
+        option name 'eth0.1'
+        option macaddr '10:56:11:10:e5:fb'
+
+config interface 'wan'
+        option _orig_ifname 'eth0.2'
+        option _orig_bridge 'false'
+        option ifname 'eth0.1122'
+        option proto 'pppoe'
+        option username ''
+        option password ''
+        option ipv6 'auto'
+
+config device 'wan_dev'
+        option name 'eth0.2'
+        option macaddr '+:'
+
+config interface 'wan6'
+        option proto 'dhcpv6'
+        option ifname 'eth0.1122'
+
+config switch
+        option name 'switch0'
+        option reset '1'
+        option enable_vlan '1'
+
+config switch_vlan
+        option device 'switch0'
+        option vlan '1'
+        option vid '1'
+        option ports '1 2 3 4 6t'
+
+config switch_vlan
+        option device 'switch0'
+        option vlan '2'
+        option ports '1t 2t 3t 4t 5 6t'
+        option vid '1122'
+
+config switch_vlan
+        option device 'switch0'
+        option vlan '3'
+        option vid '1123'
